@@ -15,7 +15,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution21 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode currentResult = new ListNode (1);
         ListNode headResult = currentResult;
