@@ -1,15 +1,15 @@
 /*
- * @lc app=leetcode id=94 lang=java
+ * @lc app=leetcode id=144 lang=java
  *
- * [94] Binary Tree Inorder Traversal
+ * [144] Binary Tree Preorder Traversal
  */
 
-// @lc code=start
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -25,25 +25,26 @@ import java.util.Stack;
  *     }
  * }
  */
-
 class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
-
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
+        if (root == null){
+            return result;
+        }
 
-        Stack<TreeNode> stack= new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
 
         while (current != null || !stack.isEmpty()){
             while (current != null){
                 stack.push(current);
+                result.add(current.val);
                 current = current.left;
             }
-
             current = stack.pop();
-            result.add(current.val);
             current = current.right;
         }
+
         return result;
     }
 }
