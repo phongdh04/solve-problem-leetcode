@@ -37,17 +37,17 @@ class Solution {
     while (current != null || !stack.isEmpty()) {
         while (current != null) {
             stack.push(current);
-            current = current.left; 
+            current = current.left;
         }
         
-        TreeNode peekNode = stack.peek(); 
+        TreeNode peekNode = stack.peek();
         
 
         if (peekNode.right != null && lastVisited != peekNode.right) {
-            current = peekNode.right; 
+            current = peekNode.right;
         } else {
             result.add(peekNode.val);
-            lastVisited = stack.pop(); 
+            lastVisited = stack.pop();
         }
     }
     return result;
